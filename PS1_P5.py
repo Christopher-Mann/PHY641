@@ -15,7 +15,7 @@ from math import pi,e
 
 
 
-
+# form of signal (input set to amp=18.0)
 def G(x,amp):
     sig=0.75
     return amp*  np.exp(-(x)**2 / (2*sig**2))
@@ -25,7 +25,7 @@ iters = 100
 val = np.zeros(iters)
 val_errs = np.zeros(iters)
 
-
+# make many realizations of the data
 for i in range(iters):    
     amp_true = 18
     scatter=2
@@ -63,7 +63,7 @@ for i in range(iters):
 
 
 
-
+# plot a single realization of data
 plt.figure(num=51)
 plt.clf()
 plt.title("One realization of taking data on a source")
@@ -78,7 +78,7 @@ plt.ylim(-10,25)
 
 
 
-
+# plot history of amplitude and error values
 
 xs = np.arange(iters)+1
 
@@ -101,7 +101,7 @@ plt.legend()
 
 
 
-
+# plot correlation of amplitude and error
 plt.figure(num=53)
 plt.clf()
 plt.title("Clear correlation between amplitude estimate and uncertainty")
@@ -109,44 +109,6 @@ plt.plot(val,val_errs,'o',label="Amps")
 plt.xlabel("Amplitude")
 plt.ylabel("error of amplitude")
 plt.legend()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
